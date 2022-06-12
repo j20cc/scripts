@@ -1,7 +1,9 @@
 //https://api.weibo.cn/2/statuses/container_timeline
 const url = $request.url;
 let body = $response.body;
-let res = filter_timeline_cards(body.items);
+
+let obj = JSON.parse(body);
+let res = filter_timeline_cards(obj.items);
 body = JSON.stringify(res);
 
 function filter_timeline_cards(cards) {
