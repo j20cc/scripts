@@ -3,18 +3,14 @@ const url = $request.url;
 let body = $response.body;
 
 function filter_timeline_cards(cards) {
+    const gg_words = ['推荐内容', '热推', '广告'];
     if (cards && cards.length > 0) {
         let j = cards.length;
         while (j--) {
             let item = cards[j];
             if (item.data) {
-              if (item.data.timestamp_text && item.data.timestamp_text == '推荐内容') {
+              if (item.data.timestamp_text && gg_words.includes(item.data.timestamp_text)) {
                 console.log(item.data.timestamp_text, j)
-                cards.splice(j, 1);
-              }
-
-              if (item.data.mblogtypename && item.data.mblogtypename == '广告') {
-                console.log(item.data.mblogtypename, j)
                 cards.splice(j, 1);
               }
             }
