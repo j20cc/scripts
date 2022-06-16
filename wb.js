@@ -3,7 +3,7 @@ const url = $request.url;
 let body = $response.body;
 
 function filter_timeline_cards(cards) {
-    const gg_words = ['推荐内容', '热推', '广告'];
+    const gg_words = ['推荐内容', '热推', '广告', '推荐'];
     if (cards && cards.length > 0) {
         let j = cards.length;
         while (j--) {
