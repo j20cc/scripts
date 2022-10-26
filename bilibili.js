@@ -7,7 +7,7 @@ function filter_feed_items(items) {
         let j = items.length;
         while (j--) {
             let item = items[j];
-            if (item.data.ad_info) {
+            if (item.ad_info) {
                 items.splice(j, 1);
             }
             
