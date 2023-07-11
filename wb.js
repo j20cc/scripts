@@ -24,8 +24,8 @@ function filter_head_cards(cards) {
         let j = cards.length;
         while (j--) {
             let item = cards[j];
-            if (item.actionlog) {
-              if (item.actionlog.source == 'ad') {
+            if (item.close_button) {
+              if (item.close_button.text == '广告') {
                 cards.splice(j, 1);
               }
             }
