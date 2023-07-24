@@ -29,6 +29,11 @@ function filter_head_cards(cards) {
                 cards.splice(j, 1);
               }
             }
+            if (item.actionlog) {
+              if (item.actionlog.source == 'ad') {
+                cards.splice(j, 1);
+              }
+            }
         }
     }
     return cards;
