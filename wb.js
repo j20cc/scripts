@@ -43,7 +43,7 @@ function filter_profile_ads(items) {
     if (items.length > 0) {
         let j = items.length;
         while (j--) {
-            let item = cards[j];
+            let item = items[j];
             if (item.data && item.data.content_auth_info_dark) {
               if (item.data.content_auth_info_dark.content_auth_title == '广告') {
                 items.splice(j, 1);
