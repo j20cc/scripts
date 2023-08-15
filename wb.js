@@ -57,6 +57,6 @@ function filter_profile_ads(items) {
 let obj = JSON.parse(body);
 if (obj.items && url.includes('container_timeline')) obj.items = filter_timeline_cards(obj.items);
 if (obj.head_cards && url.includes('extend')) obj.head_cards = filter_head_cards(obj.head_cards);
-if (obj.head_cards && url.includes('profile/container_timeline')) obj.items = filter_profile_ads(obj.items);
+if (obj.items && url.includes('profile/container_timeline')) obj.items = filter_profile_ads(obj.items);
 body = JSON.stringify(obj);
 $done({ body });
