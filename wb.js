@@ -39,8 +39,24 @@ function filter_head_cards(cards) {
     return cards;
 }
 
+function filter_profile_ads(items) {
+    if (items.length > 0) {
+        let j = items.length;
+        while (j--) {
+            let item = cards[j];
+            if (item.data && item.data.content_auth_info_dark) {
+              if (item.data.content_auth_info_dark.content_auth_title == '广告') {
+                items.splice(j, 1);
+              }
+            }
+        }
+    }
+    return items;
+}
+
 let obj = JSON.parse(body);
 if (obj.items && url.includes('container_timeline')) obj.items = filter_timeline_cards(obj.items);
 if (obj.head_cards && url.includes('extend')) obj.head_cards = filter_head_cards(obj.head_cards);
+if (obj.head_cards && url.includes('profile/container_timeline')) obj.items = filter_profile_ads(obj.items);
 body = JSON.stringify(obj);
 $done({ body });
