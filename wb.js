@@ -59,7 +59,7 @@ function filter_comment_ads(items) {
         let j = items.length;
         while (j--) {
             let item = items[j];
-            if (item.data && item.mblogtypename && item.mblogtypename == '广告') {
+            if (item.data && item.data.mblogtypename && item.data.mblogtypename == '广告') {
               items.splice(j, 1);
             }
         }
