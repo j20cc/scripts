@@ -1,0 +1,2 @@
+# Google 搜索重定向
+^https?://www\.?google\.cn\/search\?q=([^&]+).+ url 302 https://www.google.com/search?q=$1&pws=0&udm=14&gl=cn&hl=zh-cn&lr=lang_zh-CN|lang_zh-TW|lang_en&safe=off
